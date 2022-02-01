@@ -13,3 +13,4 @@
 | Fix | Fix the bug |
 | Design | UI design changes such as CSS |
 | Refactor | Refactoring the code |
+| Docs | Modify the document |
