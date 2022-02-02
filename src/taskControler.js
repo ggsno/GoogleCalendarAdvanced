@@ -1,31 +1,22 @@
-import createTaskElement from "./createTaskElement.js";
+import {addTask} from "./addTask.js";
 
-const $button = document.querySelector('.addTaskButton');
-const $taskList = document.querySelector('.taskList');
+const $addTaskButton = document.querySelector('.addTaskButton');
+const $taskWrapper = document.querySelector('.taskWrapper');
 
-class taskInfo {
-  constructor(id, title, deadline, detail) {
-    this.id = id;
-    this.title = title;
-    this.deadline = deadline;
-    this.detail = detail;
+const taskList = ({
+  "taskCount" : 1,
+  0 : {
+    "title" : "init",
+    "detail" : "this is an init task",
+    "deadline" : null
   }
-}
-
-const taskList = [];
+});
 
 try {
-  $button.addEventListener("click", () => {
-    const newTask = new taskInfo(0,"title", "deadline", "detail");
-    addTask($taskList, newTask);
+  $addTaskButton.addEventListener("click", () => {
+    addTask($taskWrapper, taskList);
   });
   
-} catch(error) {
+} catch (error) {
   console.log("error : ", error);
-}
-
-function addTask($taskList, taskInfo) {
-  const $taskElement = createTaskElement(taskInfo);
-  $taskList.appendChild($taskElement);
-  taskList.push(taskInfo.id);
 }
