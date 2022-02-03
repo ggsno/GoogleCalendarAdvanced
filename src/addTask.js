@@ -14,6 +14,7 @@ export function addTask($taskWrapper, taskList) {
     "detail" : null,
     "deadline" : null
   });
+  localStorage.setItem("taskList", JSON.stringify(taskList));
   const taskDOM = getTaskElementDOM(id);
   setEditEvent(taskDOM, taskList, id);
   setDeleteEvent(taskDOM, taskList, id, $taskWrapper);

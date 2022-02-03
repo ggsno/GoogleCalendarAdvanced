@@ -1,13 +1,17 @@
 export function setEditEvent(taskDOM, taskList, id) {
   taskDOM.title.addEventListener("focusout", (event) => {
-    if (taskList[id])
+    if (taskList[id]) {
       taskList[id]["title"] = event.currentTarget.value;
+      localStorage.setItem("taskList", JSON.stringify(taskList));
+    }
   });
   taskDOM.detail.addEventListener("focusout", (event) => {
     taskList[id]["detail"] = event.currentTarget.value;
+    localStorage.setItem("taskList", JSON.stringify(taskList));
   });
   taskDOM.deadline.addEventListener("change", (event) => {
     taskList[id]["deadline"] = event.currentTarget.value;
+    localStorage.setItem("taskList", JSON.stringify(taskList));
   });
   taskDOM.doneButton.addEventListener("click", (event) => {
     const isDone = taskDOM.container.classList.toggle("done");
