@@ -1,0 +1,14 @@
+.calendar-wrapper {
+  
+}
+
+.task-wrapper {
+  float: right;
+  min-height: 100vh;
+  max-width: fit-content;
+  background-color: bisque;
+}
+
+.task-list > li > * {
+  display: block;
+}

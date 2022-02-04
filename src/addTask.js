@@ -5,7 +5,7 @@ import { setEditEvent } from "./editTask.js";
 
 const TOOMANYTASK = 1000;
 
-export function addTask($taskWrapper, taskList) {
+export function addTask($taskList, taskList) {
   const id = getId(taskList);
   if (id > TOOMANYTASK)
     taskOptimize();
@@ -17,8 +17,8 @@ export function addTask($taskWrapper, taskList) {
   localStorage.setItem("taskList", JSON.stringify(taskList));
   const taskDOM = getTaskElementDOM(id);
   setEditEvent(taskDOM, taskList, id);
-  setDeleteEvent(taskDOM, taskList, id, $taskWrapper);
-  $taskWrapper.appendChild(taskDOM.container);
+  setDeleteEvent(taskDOM, taskList, id, $taskList);
+  $taskList.appendChild(taskDOM.container);
 }
 
 function getId(taskList) {

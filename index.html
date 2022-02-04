@@ -4,14 +4,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/reset.css">
   <title>Google Calendar Advanced</title>
 </head>
 <body>
   <h1>Calendar</h1>
-  <div>
-    <h2>TASKS</h2>
-    <button class="addTaskButton">Add a task</button>
-    <ul class="taskWrapper"></ul>
+  <div class="calender-wrapper">
+    <div class="task-wrapper">
+      <h2 class="task-wrapper-title">TASKS</h2>
+      <button class="task-add-button">Add a task</button>
+      <ul class="task-list"></ul>
+    </div>
   </div>
   <script type="module" src="src/taskControler.js"></script>
 </body>

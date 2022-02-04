@@ -3,8 +3,8 @@ import { setDeleteEvent } from "./deleteTask.js";
 import { setEditEvent } from "./editTask.js";
 import { getTaskElementDOM } from "./getTaskElement.js";
 try {
-  const $addTaskButton = document.querySelector('.addTaskButton');
-  const $taskWrapper = document.querySelector('.taskWrapper');
+  const $taskAddButton = document.querySelector('.task-add-button');
+  const $taskList = document.querySelector('.task-list');
 
   let taskList = ({
     "taskCount" : 1,
@@ -25,13 +25,13 @@ try {
     if (id !== "0" && id !== "taskCount") {
       const taskDOM = getTaskElementDOM(id);
       setEditEvent(taskDOM, taskList, id);
-      setDeleteEvent(taskDOM, taskList, id, $taskWrapper);
-      $taskWrapper.appendChild(taskDOM.container);
+      setDeleteEvent(taskDOM, taskList, id, $taskList);
+      $taskList.appendChild(taskDOM.container);
     }
   }
 
-  $addTaskButton.addEventListener("click", () => {
-    addTask($taskWrapper, taskList);
+  $taskAddButton.addEventListener("click", () => {
+    addTask($taskList, taskList);
   });
   
 } catch (error) {
