@@ -1,0 +1,8 @@
+@use 'reset';
+@use 'task';
+
+.main-wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}

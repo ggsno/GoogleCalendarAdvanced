@@ -1,10 +1,3 @@
-.main-wrapper {
-  display: flex;
-  justify-content: space-between;
-  height: 100vh;
-}
-
-
 .task-wrapper {
   width: 270px;
   overflow: auto;
@@ -31,4 +24,8 @@
 
 .task-list > li > input :focus {
   outline: none;
+}
+
+.done-button {
+  
 }
