@@ -1,11 +1,6 @@
-
-import { getTaskElementDOM } from "./getTaskElement.js";
-import { setDeleteEvent } from "./deleteTask.js";
-import { setEditEvent } from "./editTask.js";
-
 const TOOMANYTASK = 1000;
 
-export function addTask($taskList, taskList) {
+export function addTask(taskList) {
   const id = getId(taskList);
   if (id > TOOMANYTASK)
     taskOptimize();
@@ -15,10 +10,6 @@ export function addTask($taskList, taskList) {
     "deadline" : null
   });
   localStorage.setItem("taskList", JSON.stringify(taskList));
-  const taskDOM = getTaskElementDOM(id);
-  setEditEvent(taskDOM, taskList, id);
-  setDeleteEvent(taskDOM, taskList, id, $taskList);
-  $taskList.appendChild(taskDOM.container);
 }
 
 function getId(taskList) {
