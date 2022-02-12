@@ -5,9 +5,10 @@ export function addTask(taskList) {
   if (id > TOOMANYTASK)
     taskOptimize();
   taskList[id] = ({
-    "title" : null,
-    "detail" : null,
-    "deadline" : null
+    "title" : "",
+    "detail" : "",
+    "deadline" : "",
+    "isDone" : false,
   });
   localStorage.setItem("taskList", JSON.stringify(taskList));
 }

@@ -23,13 +23,17 @@ function createTaskDOM(id) {
 }
 
 function initTaskDOM(id, {container, title, detail, deadline, doneButton, optionButton}) {
-  doneButton.innerText = "done";
-  doneButton.classList.add('done-button');
+  doneButton.innerText = "✔";
+  doneButton.classList.add('task-done-button');
   title.type = "text";
-  deadline.type = "date";
-  optionButton.innerText = "option";
   title.placeholder = "title"
+  title.classList.add('task-title');
+  deadline.type = "date";
+  deadline.classList.add('task-deadline');
+  optionButton.innerText = "option";
+  optionButton.classList.add('task-option-button');
   detail.placeholder = "detail";
+  detail.classList.add('task-detail');
   if (checkListExist(id)) {
     title.value = JSON.parse(localStorage.getItem("taskList"))[id].title;
     detail.value = JSON.parse(localStorage.getItem("taskList"))[id].detail;

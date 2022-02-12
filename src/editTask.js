@@ -4,27 +4,25 @@ export function setEditEvent(taskDOM, taskList, id) {
       taskList[id]["title"] = event.currentTarget.value;
       localStorage.setItem("taskList", JSON.stringify(taskList));
     }
+    if (taskList[id]["detail"] === "") {
+      taskDOM.detail.style = "display:none";
+    }
   });
+  taskDOM.title.addEventListener("click", () => {
+    taskDOM.title.select();
+    taskDOM.detail.style = "display:block";
+  });
+
   taskDOM.detail.addEventListener("focusout", (event) => {
-    taskList[id]["detail"] = event.currentTarget.value;
-    localStorage.setItem("taskList", JSON.stringify(taskList));
+    if (event.currentTarget.value !== "") {
+      taskList[id]["detail"] = event.currentTarget.value;
+      localStorage.setItem("taskList", JSON.stringify(taskList));
+      taskDOM.detail.style = "display:block";
+    }
+    
   });
   taskDOM.deadline.addEventListener("change", (event) => {
     taskList[id]["deadline"] = event.currentTarget.value;
     localStorage.setItem("taskList", JSON.stringify(taskList));
   });
-  taskDOM.doneButton.addEventListener("click", (event) => {
-    const isDone = taskDOM.container.classList.toggle("done");
-    if (isDone) {
-      taskDOM.doneButton.innerText = "undo";
-      taskDOM.title.readOnly = true;
-      taskDOM.title.style = "background-color:gray"
-      console.log("done");
-    } else {
-      taskDOM.doneButton.innerText = "done";
-      taskDOM.title.readOnly = false;
-      taskDOM.title.style = "background-color:white"
-      console.log("undo");
-    }
-  })
 }

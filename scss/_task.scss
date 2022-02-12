@@ -5,27 +5,37 @@
   box-shadow: 5px 0px 5px 4px gray;
 }
 
-.task-list > li:hover{
-  background-color: #f8f9fa;
-}
+.task-list {
 
-.task-list > li {
-  padding: 20px;
-  display: flex;
-}
+  li {
+    padding: 20px;
+    display: flex;
 
-.task-list > li > textarea {
-  display: none;
-}
+    &:hover {
+      background-color: #f8f9fa;    
+      .task-option-button {
+        display: block;
+      }
+    }
 
-.task-list > li > input {
-  border: 0px;
-}
+    .task-detail {
+      display: none;
+    }
 
-.task-list > li > input :focus {
-  outline: none;
-}
+    .task-title {
+      border: 0px;
 
-.done-button {
-  
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .task-deadline {
+      display: none;
+    }
+
+    .task-option-button {
+      display: none;
+    }
+  }
 }

@@ -2,9 +2,10 @@ export function getTaskList() {
   let taskList = ({
     "taskCount" : 1,
     0 : {
-      "title" : "init",
+      "title" : "task title",
       "detail" : "this is an init task",
-      "deadline" : null
+      "deadline" : "1993-12-25",
+      "isDone" : false,
     }
   });
 
