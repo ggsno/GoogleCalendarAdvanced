@@ -4,7 +4,7 @@ export function getTaskList() {
     0 : {
       "title" : "task title",
       "detail" : "this is an init task",
-      "deadline" : "1993-12-25",
+      "deadline" : "1900-01-01",
       "isDone" : false,
     }
   });

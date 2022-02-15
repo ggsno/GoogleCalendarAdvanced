@@ -17,28 +17,44 @@ body {
 }
 
 .task-list li {
-  padding: 20px;
-  display: flex;
+  padding: 5px 0px;
 }
 .task-list li:hover {
   background-color: #f8f9fa;
 }
 .task-list li:hover .task-option-button {
-  display: block;
+  visibility: visible;
 }
-.task-list li .task-detail {
-  display: none;
+.task-list li .task-done-button {
+  padding: 0px 15px;
+  border: none;
+  background: inherit;
+  cursor: pointer;
 }
 .task-list li .task-title {
-  border: 0px;
+  border: none;
+  background: inherit;
 }
 .task-list li .task-title:focus {
   outline: none;
 }
-.task-list li .task-deadline {
-  display: none;
+.task-list li .task-title:focus .task-deadline {
+  display: block;
 }
 .task-list li .task-option-button {
+  visibility: hidden;
+  border: none;
+  background: inherit;
+  cursor: pointer;
+}
+.task-list li .task-detail {
+  display: none;
+  border: none;
+  background: inherit;
+  resize: none;
+  height: 15px;
+}
+.task-list li .task-deadline {
   display: none;
 }
 
