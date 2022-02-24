@@ -69,5 +69,6 @@ function initTaskDOM(id, {container, title, detail, deadline, doneButton, option
 
 function checkListExist(id) {
   // It is a temporary code.
-  return JSON.parse(localStorage.getItem("taskList"))[id].title;
+  return JSON.parse(localStorage.getItem("taskList"))[id].title
+    || JSON.parse(localStorage.getItem("taskList"))[id].detail;
 }

@@ -1,16 +1,15 @@
 export function setEditEvent(taskDOM, taskList, id) {
-  
-  taskDOM.title.addEventListener("focusout", (event) => {
-    if (taskList[id]) {
-      taskList[id]["title"] = event.currentTarget.value;
-      localStorage.setItem("taskList", JSON.stringify(taskList));
-    }
-  });
   taskDOM.title.addEventListener("click", () => {
     taskDOM.title.select();
     taskDOM.detail.style.display = "block";
     taskDOM.deadline.style.display = "block";
   });
+
+  taskDOM.title.addEventListener("focusout", (event) => {
+    taskList[id]["title"] = event.currentTarget.value;
+    localStorage.setItem("taskList", JSON.stringify(taskList));
+  });
+  
 
   taskDOM.detail.addEventListener("keydown", () => {
     taskDOM.detail.style.height = "0px";
